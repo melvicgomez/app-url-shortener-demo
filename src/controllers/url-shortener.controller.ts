@@ -90,7 +90,6 @@ export class UrlShortenerController {
             // redirect to the final URL
             // response.redirect(request.cookies.finalDestination);
             response.render('page-template', {
-              delay: process.env.DELAY_MS,
               currentLink: decodeURI(request.protocol + '://' + request.get('host') + request.url),
               nextDestination: request.cookies.finalDestination,
             });
@@ -123,7 +122,6 @@ export class UrlShortenerController {
 
           // to show the URL redirection in browsing journey/experience
           response.render('page-template', {
-            delay: process.env.DELAY_MS,
             currentLink: request.protocol + '://' + request.get('host') + request.url,
             nextDestination: nextDestination,
           });
